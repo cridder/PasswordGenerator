@@ -29,9 +29,6 @@ console.log("pwLength is : " + pwLength);
 //    [ ] THEN I confirm whether or not to include lowercase, uppercase, numeric, and/or special characters
 // https://stackoverflow.com/questions/1027224/how-can-i-test-if-a-letter-in-a-string-is-uppercase-or-lowercase-using-javascrip
 
-// pwLowercaseInput = prompt("\nInclude lowercase characters in password?\n \nYES or NO?\n");
-
-
 var pwLowercaseInput; 
 var pwYES = 'YES'; 
 var pwNO = 'NO'; 
@@ -42,13 +39,7 @@ do {
   console.log(pwLowercaseInput);
   pwLowercaseInput = pwLowercaseInput.toUpperCase();
   console.log(pwLowercaseInput);
-} while (!(pwLowercaseInput === pwYES) || (pwLowercaseInput === pwNO));
-// } while (pwLowercaseInput !== "YES" || pwLowercaseInput !== "NO");
-// } while (pwLowercaseInput !== String(pwLowercaseInput) || pwLowercaseInput !== String(pwLowercaseInput));
-// } while (isNaN(pwLowercaseInput) && pwLowercaseInput != pwLowercaseInput.toUpperCase());
-// } while (pwLowercaseInput.toLowerCase() || pwLowercaseInput != pwLowercaseInput.toUpperCase());
-// } while (!isNaN(pwLowercaseInput) && pwLowercaseInput.toLowerCase() || pwLowercaseInput != pwLowercaseInput.toUpperCase());
-// } while (pwLowercaseInput === "YES" || pwLowercaseInput === "NO" );
+} while (!(pwLowercaseInput === pwYES) && !(pwLowercaseInput === pwNO));
 
 
 // get YES or NO
