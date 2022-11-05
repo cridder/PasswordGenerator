@@ -8,18 +8,44 @@
 
 // main function
 function userPrompts() {
-// - [ ] WHEN prompted for the length of the password
-// - [ ] THEN I choose a length of at least 8 characters and no more than 128 characters
-  var pwLength = 0;
+
+// - [X] WHEN prompted for the length of the password
+// - [X] THEN I choose a length of at least 8 characters and no more than 128 characters
+// https://www.reddit.com/r/javascript/comments/196ahg/can_anyone_help_with_validation_of_prompt_within/
+var pwLengthInput; 
+do {
+  pwLengthInput = prompt("\nLength of password?\n \nEnter a number!\n \n8 character minimum\n \n128 character maximum\n");
+} while (isNaN(pwLengthInput) || pwLengthInput < 8 || pwLengthInput > 128);
+// convert input to a number
+var pwLength = parseInt(pwLengthInput);
+
+
+
+
+
+// pwLength = prompt("\n \n Length of password? \n \n 8 character minimum \n \n 128 character maximum \n \n ");
+
+// if (isNaN(pwLength) || pwLength < 8 || pwLength > 128) {
+//   prompt("Input not valid");
+// } else {
+//   prompt("Input OK");
+// }
+
+// // if pwLength is not a number, less than 8, greater than 128, ask again
+// if (!(typeof pwLength === "number")) {
+//   pwLength = prompt("\n \n You did not enter a number! \n \n 8 character minimum \n \n 128 character maximum \n \n ");
+// }
+
+
   console.log("pwLength is a: " + typeof pwLength);
-  console.log("pwLength is a: " + !(typeof pwLength === "number"));
+  console.log("pwLength type is a: " + !(typeof pwLength === "number"));
   console.log("pwLength is a: " + (pwLength < 8 || pwLength > 128));
 
-  // if pwLength is not a number, less than 8, greater than 128, ask again
-  if (!(typeof pwLength === "number") && (pwLength < 8 && pwLength > 128)) {
-    pwLength = prompt("Length of password?");
-  }
-  console.log(pwLength);
+  // // if pwLength is not a number, less than 8, greater than 128, ask again
+  // if (!(typeof pwLength === "number") && (pwLength < 8 && pwLength > 128)) {
+  //   pwLength = prompt("Length of password?");
+  // }
+  // console.log(pwLength);
 }
 
 // - [ ] WHEN prompted for password criteria
