@@ -132,7 +132,7 @@ while (i < pwLength) {
   console.log("The val is " + val);
   passwordArray.push(val); // add the character to the end of password array
   console.log("The passwordArray is " + passwordArray);
-  arPwSource.splice(numRan, 1);// remove the charater from the array so it will not be used again
+  // arPwSource.splice(numRan, 1);// remove the charater from the array so it will not be used again
   console.log("arPwSource length is a: " + arPwSource.length);
   i++;
 }
