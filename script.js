@@ -11,6 +11,8 @@ function getCharacterSets(getInput, string) {
   var getInput = null;
   var pwYES = 'YES';
   var pwNO = 'NO';
+  var strYesNo = "YES or NO?"
+  var strOneSet = "check CharacterSets FUNCTION\nAt least ONE of these character sets are required:\nLowercase, Uppercase, Numeric, Special!"
   do {
     getInput = prompt(string);
     } while (!(getInput === pwYES) && !(getInput === pwNO));
@@ -21,32 +23,38 @@ function getCharacterSets(getInput, string) {
 }
 // END FUNCTION
 
-// START FUNCTION
-function checkCharacterSets() {
-  var pwYES = 'YES';
-  var pwNO = 'NO';
-  var strYesNo = "YES or NO?"
-  var strOneSet = "checkCharacterSets FUNCTION\nAt least ONE of these character sets are required:\nLowercase, Uppercase, Numeric, Special!"
-  do {
-    // GET LOWERCASE ANSWER
-    var pwLowercaseInput = null;
-    var pwLowercaseInput = getCharacterSets(pwLowercaseInput, "\n" + strOneSet + "\nInclude LOWERCASE characters in password?\n" + strYesNo + "\n");
-    // GET UPPERCASE ANSWER
-    var pwUppercaseInput = null;
-    var pwUppercaseInput = getCharacterSets(pwUppercaseInput,"\n" + strOneSet + "\nInclude UPPERCASE characters in password?\n" + strYesNo + "\n");
-    // GET NUMERIC ANSWER
-    var pwNumericInput = null;
-    var pwNumericInput = getCharacterSets(pwNumericInput,"\n" + strOneSet + "\nInclude NUMERIC characters in password?\n" + strYesNo + "\n");
-    // GET SPECIAL ANSWER
-    var pwSpecialInput = null;
-      var pwSpecialInput = getCharacterSets(pwSpecialInput,"\n" + strOneSet + "\nInclude SPECIAL characters in password?\n" + strYesNo + "\n");
-    } while ((pwLowercaseInput === pwNO) && (pwUppercaseInput === pwNO) && (pwNumericInput === pwNO) && (pwSpecialInput === pwNO));
-}
-// END FUNCTION
+// -------------------------------------------------------------------
 
 // START FUNCTION
+// function checkCharacterSets() {
+//   var pwYES = 'YES';
+//   var pwNO = 'NO';
+//   var strYesNo = "YES or NO?"
+//   // var strOneSet = "checkCharacterSets FUNCTION\nAt least ONE of these character sets are required:\nLowercase, Uppercase, Numeric, Special!"
+//   var strOneSet = " 21341231251512155215155 "
+//   do {
+//       // [X] WHEN asked for character types to include in the password
+//       // [X] THEN I confirm whether or not to include lowercase, uppercase, numeric, and/or special characters
+//     // GET LOWERCASE ANSWER
+//     var pwLowercaseInput = null;
+//     var pwLowercaseInput = getCharacterSets(pwLowercaseInput, "\n" + strOneSet + "\nInclude LOWERCASE characters in password?\n" + strYesNo + "\n");
+//     // GET UPPERCASE ANSWER
+//     var pwUppercaseInput = null;
+//     var pwUppercaseInput = getCharacterSets(pwUppercaseInput,"\n" + strOneSet + "\nInclude UPPERCASE characters in password?\n" + strYesNo + "\n");
+//     // GET NUMERIC ANSWER
+//     var pwNumericInput = null;
+//     var pwNumericInput = getCharacterSets(pwNumericInput,"\n" + strOneSet + "\nInclude NUMERIC characters in password?\n" + strYesNo + "\n");
+//     // GET SPECIAL ANSWER
+//     var pwSpecialInput = null;
+//       var pwSpecialInput = getCharacterSets(pwSpecialInput,"\n" + strOneSet + "\nInclude SPECIAL characters in password?\n" + strYesNo + "\n");
+//     } while ((pwLowercaseInput === pwNO) && (pwUppercaseInput === pwNO) && (pwNumericInput === pwNO) && (pwSpecialInput === pwNO));
+// }
+// END FUNCTION
+
+// -------------------------------------------------------------------
+
+// START generatePassword FUNCTION
 function generatePassword() {
-  checkCharacterSets();
   
   // [X] WHEN prompted for the length of the password
     // [X] THEN I choose a length of at least 8 characters and no more than 128 characters  
@@ -60,24 +68,39 @@ var pwLengthInput = null;
     console.log("pwLength type is a: " + typeof pwLength);
     console.log("pwLength is : " + pwLength);
 
+// -------------------------------------------------------------------
 
+var pwYES = 'YES';
+var pwNO = 'NO';
+var strYesNo = "YES or NO?"
+var strOneSet = "checkCharacterSets FUNCTION\nAt least ONE of these character sets are required:\nLowercase, Uppercase, Numeric, Special!"
+
+do {
   // [X] WHEN asked for character types to include in the password
-      // [X] THEN I confirm whether or not to include lowercase, uppercase, numeric, and/or special characters
+  // [X] THEN I confirm whether or not to include lowercase, uppercase, numeric, and/or special characters
 // GET LOWERCASE ANSWER
 var pwLowercaseInput = null;
-  var pwLowercaseInput = getCharacterSets(pwLowercaseInput,"\nInclude lowercase characters in password?\n \nYES or NO?\n");
-
+var pwLowercaseInput = getCharacterSets(pwLowercaseInput, "\n" + strOneSet + "\nInclude LOWERCASE characters in password?\n" + strYesNo + "\n");
 // GET UPPERCASE ANSWER
 var pwUppercaseInput = null;
-  var pwUppercaseInput = getCharacterSets(pwUppercaseInput,"\nInclude uppercase characters in password?\n \nYES or NO?\n");
-
+var pwUppercaseInput = getCharacterSets(pwUppercaseInput,"\n" + strOneSet + "\nInclude UPPERCASE characters in password?\n" + strYesNo + "\n");
 // GET NUMERIC ANSWER
 var pwNumericInput = null;
-  var pwNumericInput = getCharacterSets(pwNumericInput,"\nInclude numeric characters in password?\n \nYES or NO?\n");
-
+var pwNumericInput = getCharacterSets(pwNumericInput,"\n" + strOneSet + "\nInclude NUMERIC characters in password?\n" + strYesNo + "\n");
 // GET SPECIAL ANSWER
 var pwSpecialInput = null;
-  var pwSpecialInput = getCharacterSets(pwSpecialInput,"\nInclude special characters in password?\n \nYES or NO?\n");
+  var pwSpecialInput = getCharacterSets(pwSpecialInput,"\n" + strOneSet + "\nInclude SPECIAL characters in password?\n" + strYesNo + "\n");
+} while ((pwLowercaseInput === pwNO) && (pwUppercaseInput === pwNO) && (pwNumericInput === pwNO) && (pwSpecialInput === pwNO));
+
+
+
+
+
+// -------------------------------------------------------------------
+  console.log("pwLowercaseInput is a: " + pwLowercaseInput);
+  console.log("pwUppercaseInput is a: " + pwUppercaseInput);
+  console.log("pwNumericInput is a: " + pwNumericInput);
+  console.log("pwSpecialInput is a: " + pwSpecialInput);
 
 const arSpecial = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "\\", "]", "^", "_", "`", "{", "|", "}", "~"];
 
@@ -98,8 +121,9 @@ const arLowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l",
 
 
 }
-// END FUNCTION
+// END generatePassword FUNCTION
 
+// -------------------------------------------------------------------
 
 // Provided functions below
 // Get references to the #generate element
