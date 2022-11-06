@@ -6,14 +6,6 @@
   //  [X] WHEN prompted for password criteria
     //  [X] THEN I select which criteria to include in the password
 
-// START FUNCTION
-function arrayconnect(input, str, arDestination, arSource) {
-  if  (input === str)
-  var arDestination = arDestination.concat(arSource);
-  console.log("arDestination is a: " + arDestination);
-  return arDestination;
-}
-// END FUNCTION
 // -------------------------------------------------------------------
 
 // START FUNCTION
@@ -83,45 +75,78 @@ var pwSpecialInput = null;
 const arLowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 const arUpperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 const arNumeric = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
-const arSpecial = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "\\", "]", "^", "_", "`", "{", "|", "}", "~"];
+const arSpecial = ["!", "#", "$", "%", "&", "(", ")", "*", "+", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "]", "^", "_", "`", "{", "|", "}", "~"];
+
 // -------------------------------------------------------------------
 
-  //  [ ] WHEN all prompts are answered
-    //  [ ] THEN a password is generated that matches the selected criteria
+  //  [X] WHEN all prompts are answered
+    //  [X] THEN a password is generated that matches the selected criteria
 // CREATE PASSWORD
 // create empty array
 var arPwSource = [];
 // if LOWERCASE is yes then add to array
-// arrayconnect(pwLowercaseInput, "YES", arPwSource, arLowerCase)
-
 if  (pwLowercaseInput === "YES") {
   var arPwSource = arPwSource.concat(arLowerCase);
   console.log("arPwSource is a: " + arPwSource);
 }
 
 // if UPPERCASE is yes then add to array
-// arrayconnect(pwUppercaseInput, "YES", arPwSource, arUpperCase)
-
 if  (pwUppercaseInput === "YES") {
   var arPwSource = arPwSource.concat(arUpperCase);
   console.log("arPwSource is a: " + arPwSource);
 }
 
 // if NUMERIC is yes then add to array
-// arrayconnect(pwNumericInput, "YES", arPwSource, arNumeric)
-
 if  (pwNumericInput === "YES") {
   var arPwSource = arPwSource.concat(arNumeric);
   console.log("arPwSource is a: " + arPwSource);
 }
 
 // if SPECIAL is yes then add to array
-// arrayconnect(pwSpecialInput, "YES", arPwSource, arSpecial)
-
 if  (pwSpecialInput === "YES") {
   var arPwSource = arPwSource.concat(arSpecial);
   console.log("arPwSource is a: " + arPwSource);
 }
+
+// -------------------------------------------------------------------
+
+// what do we have
+// length
+console.log("pwlength is a: " + pwLength);
+// array
+console.log("arPwSource is a: " + arPwSource);
+// array length
+console.log("arPwSource length is a: " + arPwSource.length);
+
+// Returns a random integer from 0 to 127:
+Math.floor(Math.random() * 128);
+
+var passwordArray = [];
+let i = 0;
+while (i < pwLength) {
+  var numRan = 0 // reset random #
+  var indx = 0 // reset index of array
+  var numRan = Math.floor(Math.random() * arPwSource.length); // get random # from 0 to 127
+  console.log("The numRan is " + numRan);
+  var val = arPwSource[numRan]; // using random # get the character from array
+  console.log("The val is " + val);
+  passwordArray.push(val); // add the character to the end of password array
+  console.log("The passwordArray is " + passwordArray);
+  arPwSource.splice(numRan, 1);// remove the charater from the array so it will not be used again
+  console.log("arPwSource length is a: " + arPwSource.length);
+  i++;
+}
+
+console.log("The FINAL passwordArray is " + passwordArray);
+console.log("The FINAL passwordArray LENGTH " + passwordArray.length);
+
+
+var finalPasswordIs = passwordArray.join(""); // ARRAY TO STRING WITHOUGH COMMAS
+return finalPasswordIs;
+
+// for (let i = pwLength; i <= arPwSource.length; i++) {
+
+// }
 
 // -------------------------------------------------------------------
 
