@@ -1,10 +1,8 @@
 // Assignment code here
-
-  //  [X ] WHEN I click the button to generate a password
-    //  [X] THEN I am presented with a series of prompts for password criteria
-
-  //  [X] WHEN prompted for password criteria
-    //  [X] THEN I select which criteria to include in the password
+// [X ] WHEN I click the button to generate a password
+// [X] THEN I am presented with a series of prompts for password criteria
+// [X] WHEN prompted for password criteria
+// [X] THEN I select which criteria to include in the password
 
 // -------------------------------------------------------------------
 
@@ -18,18 +16,16 @@ function getCharacterSets(getInput, string) {
   do {
     getInput = prompt(string);
     } while (!(getInput === pwYES) && !(getInput === pwNO));
-    console.log("");
-    console.log("getCharacterSets getInput is : " + getInput);
-    console.log("");
     return getInput;
 }
 // END FUNCTION
+
 // -------------------------------------------------------------------
 
 // START generatePassword FUNCTION
 function generatePassword() {
-  //  [X] WHEN prompted for the length of the password
-    //  [X] THEN I choose a length of at least 8 characters and no more than 128 characters  
+// [X] WHEN prompted for the length of the password
+// [X] THEN I choose a length of at least 8 characters and no more than 128 characters  
 // GET LENGTH OF PASSWORD  
 var pwLengthInput = null; 
   do {
@@ -37,8 +33,7 @@ var pwLengthInput = null;
     } while (isNaN(pwLengthInput) || pwLengthInput < 8 || pwLengthInput > 128);
     // convert input to a number
     var pwLength = parseInt(pwLengthInput);
-    console.log("pwLength type is a: " + typeof pwLength);
-    console.log("pwLength is : " + pwLength);
+
 // -------------------------------------------------------------------
 
 var pwYES = 'YES';
@@ -47,10 +42,10 @@ var strYesNo = "YES or NO?"
 var strOneSet = "checkCharacterSets FUNCTION\nAt least ONE of these character sets are required:\nLowercase, Uppercase, Numeric, Special!"
 
 do {
-  //  [X] WHEN asked for character types to include in the password
-    //  [X] THEN I confirm whether or not to include lowercase, uppercase, numeric, and/or special characters
-  //  [X] WHEN I answer each prompt
-    //  [X] THEN my input should be validated and at least one character type should be selected
+//[X] WHEN asked for character types to include in the password
+//[X] THEN I confirm whether or not to include lowercase, uppercase, numeric, and/or special characters
+//[X] WHEN I answer each prompt
+//[X] THEN my input should be validated and at least one character type should be selected
 // GET LOWERCASE ANSWER
 var pwLowercaseInput = null;
 var pwLowercaseInput = getCharacterSets(pwLowercaseInput, "\n" + strOneSet + "\nInclude LOWERCASE characters in password?\n" + strYesNo + "\n");
@@ -65,11 +60,6 @@ var pwSpecialInput = null;
   var pwSpecialInput = getCharacterSets(pwSpecialInput,"\n" + strOneSet + "\nInclude SPECIAL characters in password?\n" + strYesNo + "\n");
 } while ((pwLowercaseInput === pwNO) && (pwUppercaseInput === pwNO) && (pwNumericInput === pwNO) && (pwSpecialInput === pwNO));
 
-  console.log("pwLowercaseInput is a: " + pwLowercaseInput);
-  console.log("pwUppercaseInput is a: " + pwUppercaseInput);
-  console.log("pwNumericInput is a: " + pwNumericInput);
-  console.log("pwSpecialInput is a: " + pwSpecialInput);
-
 // -------------------------------------------------------------------
 
 const arLowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
@@ -79,47 +69,32 @@ const arSpecial = ["!", "#", "$", "%", "&", "(", ")", "*", "+", "-", ".", "/", "
 
 // -------------------------------------------------------------------
 
-  //  [X] WHEN all prompts are answered
-    //  [X] THEN a password is generated that matches the selected criteria
+//[X] WHEN all prompts are answered
+//[X] THEN a password is generated that matches the selected criteria
 // CREATE PASSWORD
 // create empty array
 var arPwSource = [];
 // if LOWERCASE is yes then add to array
 if  (pwLowercaseInput === "YES") {
   var arPwSource = arPwSource.concat(arLowerCase);
-  console.log("arPwSource is a: " + arPwSource);
 }
 
 // if UPPERCASE is yes then add to array
 if  (pwUppercaseInput === "YES") {
   var arPwSource = arPwSource.concat(arUpperCase);
-  console.log("arPwSource is a: " + arPwSource);
 }
 
 // if NUMERIC is yes then add to array
 if  (pwNumericInput === "YES") {
   var arPwSource = arPwSource.concat(arNumeric);
-  console.log("arPwSource is a: " + arPwSource);
 }
 
 // if SPECIAL is yes then add to array
 if  (pwSpecialInput === "YES") {
   var arPwSource = arPwSource.concat(arSpecial);
-  console.log("arPwSource is a: " + arPwSource);
 }
 
 // -------------------------------------------------------------------
-
-// what do we have
-// length
-console.log("pwlength is a: " + pwLength);
-// array
-console.log("arPwSource is a: " + arPwSource);
-// array length
-console.log("arPwSource length is a: " + arPwSource.length);
-
-// Returns a random integer from 0 to 127:
-Math.floor(Math.random() * 128);
 
 var passwordArray = [];
 let i = 0;
@@ -127,31 +102,16 @@ while (i < pwLength) {
   var numRan = 0 // reset random #
   var indx = 0 // reset index of array
   var numRan = Math.floor(Math.random() * arPwSource.length); // get random # from 0 to 127
-  console.log("The numRan is " + numRan);
   var val = arPwSource[numRan]; // using random # get the character from array
-  console.log("The val is " + val);
   passwordArray.push(val); // add the character to the end of password array
-  console.log("The passwordArray is " + passwordArray);
-  // arPwSource.splice(numRan, 1);// remove the charater from the array so it will not be used again
-  console.log("arPwSource length is a: " + arPwSource.length);
   i++;
 }
-
-console.log("The FINAL passwordArray is " + passwordArray);
-console.log("The FINAL passwordArray LENGTH " + passwordArray.length);
-
 
 var finalPasswordIs = passwordArray.join(""); // ARRAY TO STRING WITHOUGH COMMAS
 return finalPasswordIs;
 
-// for (let i = pwLength; i <= arPwSource.length; i++) {
-
-// }
-
-// -------------------------------------------------------------------
-
-  //  [ ] WHEN the password is generated
-    //  [ ] THEN the password is either displayed in an alert or written to the page
+//[X] WHEN the password is generated
+//[X] THEN the password is either displayed in an alert or written to the page
 
 }
 // END generatePassword FUNCTION
