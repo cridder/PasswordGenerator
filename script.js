@@ -25,7 +25,7 @@ function getCharacterSets(getInput, string) {
 
 // -------------------------------------------------------------------
 
-// START FUNCTION
+// START FUNCTION079
 // function checkCharacterSets() {
 //   var pwYES = 'YES';
 //   var pwNO = 'NO';
