@@ -11,6 +11,7 @@ function arrayconnect(input, str, arDestination, arSource) {
   if  (input === str)
   var arDestination = arDestination.concat(arSource);
   console.log("arDestination is a: " + arDestination);
+  return arDestination;
 }
 // END FUNCTION
 // -------------------------------------------------------------------
@@ -91,34 +92,36 @@ const arSpecial = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", "
 // create empty array
 var arPwSource = [];
 // if LOWERCASE is yes then add to array
+// arrayconnect(pwLowercaseInput, "YES", arPwSource, arLowerCase)
 
-arrayconnect(pwLowercaseInput, "YES", arPwSource, arLowerCase)
-
-// if  (pwLowercaseInput === "YES") {
-//   var arPwSource = arPwSource.concat(arLowerCase);
-//   console.log("arPwSource is a: " + arPwSource);
-// }
+if  (pwLowercaseInput === "YES") {
+  var arPwSource = arPwSource.concat(arLowerCase);
+  console.log("arPwSource is a: " + arPwSource);
+}
 
 // if UPPERCASE is yes then add to array
+// arrayconnect(pwUppercaseInput, "YES", arPwSource, arUpperCase)
+
 if  (pwUppercaseInput === "YES") {
   var arPwSource = arPwSource.concat(arUpperCase);
   console.log("arPwSource is a: " + arPwSource);
 }
 
 // if NUMERIC is yes then add to array
+// arrayconnect(pwNumericInput, "YES", arPwSource, arNumeric)
+
 if  (pwNumericInput === "YES") {
   var arPwSource = arPwSource.concat(arNumeric);
   console.log("arPwSource is a: " + arPwSource);
 }
 
 // if SPECIAL is yes then add to array
+// arrayconnect(pwSpecialInput, "YES", arPwSource, arSpecial)
+
 if  (pwSpecialInput === "YES") {
   var arPwSource = arPwSource.concat(arSpecial);
   console.log("arPwSource is a: " + arPwSource);
 }
-
-
-
 
 // -------------------------------------------------------------------
 
