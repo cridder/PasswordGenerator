@@ -3,20 +3,20 @@
 - [ ] The main issues I can find are that your file structure is not quite organized as it should be. Ideally you should put your index in your root but then have an assets folder containing css, js, and image subfolders. These subfolders should contain all relevant files in order to make your repo and general file structure easier to navigate. This will prove very useful as your projects get larger and larger.
 
 - [ ] did not provide a link to your repo.
-    - [ ] new renamed repo link - https://github.com/cridder/PasswordGenerator
-    - [ ] old link - https://cridder.github.io/003-Challenge-JavaScript-Challenge_Password-Generator/
+    - [ ] **renamed** repo link = **https://github.com/cridder/PasswordGenerator**
+        - [ ] old link = https://cridder.github.io/003-Challenge-JavaScript-Challenge_Password-Generator
 - [ ] readme is missing a screenshot
     - [ ] 
 - [X] I would also encourage you to name your repos after the content only
-    - [X] new name - **PasswordGenerator**
-    - [X] old name - **003-Challenge-JavaScript-Challenge_Password-Generator**
+    - [X] **new** name = **PasswordGenerator**
+        - [X] old name = 003-Challenge-JavaScript-Challenge_Password-Generator
 
 
 
 
 
 # Password Generator Starter Code
-https://github.com/cridder/PasswordGenerator
+Link = https://cridder.github.io/PasswordGenerator/
 
 # JavaScript Challenge: Password Generator
 This week's Challenge requires you to create an application that an employee can use to generate a random password based on criteria they've selected. This app will run in the browser, and will feature dynamically updated HTML and CSS powered by JavaScript code that you write. It will have a clean and polished user interface that is responsive, ensuring that it adapts to multiple screen sizes. This week's coursework will teach you all the skills you need to succeed in this assignment.
