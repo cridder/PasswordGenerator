@@ -5,8 +5,8 @@
 - [ ] did not provide a link to your repo.
     - [ ] **renamed** repo link = **https://github.com/cridder/PasswordGenerator**
         - [ ] old link = https://cridder.github.io/003-Challenge-JavaScript-Challenge_Password-Generator
-- [ ] readme is missing a screenshot
-    - [ ] 
+- [X] readme is missing a screenshot
+    - [X] **SEE IMAGES BELOW**
 - [X] I would also encourage you to name your repos after the content only
     - [X] **new** name = **PasswordGenerator**
         - [X] old name = 003-Challenge-JavaScript-Challenge_Password-Generator
