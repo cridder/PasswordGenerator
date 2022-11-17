@@ -1,9 +1,9 @@
 
 # ReSubmit
-- [ ] The main issues I can find are that your file structure is not quite organized as it should be. Ideally you should put your index in your root but then have an assets folder containing css, js, and image subfolders. These subfolders should contain all relevant files in order to make your repo and general file structure easier to navigate. This will prove very useful as your projects get larger and larger.
-
-- [ ] did not provide a link to your repo.
-    - [ ] **renamed** repo link = **https://github.com/cridder/PasswordGenerator**
+- [X] index in your root but then have an assets folder containing css, js, and image subfolders. These subfolders should contain all relevant files in order to make your repo and general file structure easier to navigate.
+    - [X] added folders and reorganized
+- [X] did not provide a link to your repo.
+    - [X] **renamed** repo link = **https://github.com/cridder/PasswordGenerator**
         - [ ] old link = https://cridder.github.io/003-Challenge-JavaScript-Challenge_Password-Generator
 - [X] readme is missing a screenshot
     - [X] **SEE IMAGES BELOW**
@@ -11,8 +11,13 @@
     - [X] **new** name = **PasswordGenerator**
         - [X] old name = 003-Challenge-JavaScript-Challenge_Password-Generator
 
-
-
+![1](assets/image/2.PNG)
+![2](assets/image/2.PNG)
+![3](assets/image/3.PNG)
+![4](assets/image/4.PNG)
+![5](assets/image/5.PNG)
+![6](assets/image/6.PNG)
+![7](assets/image/7.PNG)
 
 
 # Password Generator Starter Code
